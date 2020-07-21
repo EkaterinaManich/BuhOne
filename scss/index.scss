@@ -1,0 +1,822 @@
+@mixin styles-for-hover($opacity:1) {
+    background: rgba(106, 183, 228, $opacity);
+    cursor: pointer;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(.../fonts/lato/latoregular.woff2);
+}
+
+@font-face {
+    font-family: LatoBold;
+    src: url(../fonts/lato/latobold.woff2);
+}
+
+@font-face {
+    font-family: LatoBlack;
+    src: url(../fonts/lato/latoblack.woff2);
+}
+
+@font-face {
+    font-family: Merriweather;
+    src: url(../fonts/merriweather/merriweatherbold.woff2);
+}
+
+@font-face {
+    font-family: MerriweatherUltra;
+    src: url(../fonts/merriweather/merriweatherultrabold.woff2);
+}
+
+@font-face {
+    font-family: LatoLight;
+    src: url(../fonts/lato/latolight.woff2);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapped1200 {
+    max-width: 1240px;
+    width: 100%;
+    position: relative;
+    padding: 0 20px;
+}
+
+.navigation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    background: white;
+    z-index: 9999;
+}
+
+.navigation>.wrapped1200 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation-logo {
+    width: 204px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation-nav {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*******************************************/
+
+.contacts {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+
+    &-item {
+        display: flex;
+        align-items: center;
+        margin: 22px 0;
+        font-family: Lato;
+        font-size: 13px;
+        color: #000000;
+
+        a {
+            text-decoration: none;
+            color: #000000;
+
+            &:hover {
+                text-decoration: underline;
+                color: #2225c2;
+            }
+        }
+
+        img {
+            margin-right: 15px;
+        }
+    }
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+
+    &-item {
+        font-family: Lato;
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 31px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000;
+
+        &:hover {
+            text-decoration: underline;
+            color: #2225c2;
+        }
+    }
+}
+
+/****************************** FIRST-SCREEN STYLES ***********************************/
+
+.first-screen {
+    margin-top: 110px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url(../img/Background.png);
+}
+
+.first-screen__title {
+    max-width: 589px;
+    font-family: Merriweather;
+    font-size: 48px;
+    line-height: 66px;
+    color: #FFFFFF;
+    margin: 170px 0 80px 0;
+}
+
+.first-screen__btn {
+    width: 270px;
+    height: 60px;
+    background-color: #005FA3;
+    color: white;
+    font-family: Lato;
+    line-height: 25px;
+    padding: 19px 18px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 120px;
+}
+
+.first-screen__btn:hover {
+    background: rgba(103, 207, 255, 1);
+    cursor: pointer;
+    color: #000000;
+    text-decoration: underline;
+    transition: all 0.3s ease-in;
+}
+
+.first-screen__circle {
+    max-width: 160px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 113px;
+}
+
+.first-screen__circle-item {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.first-screen__circle-item:hover, .first-screen__circle-item.active:hover {
+    background: rgba(103, 207, 255, 1);
+}
+
+.first-screen__circle-item.active {
+    background: rgba(255, 255, 255, 1);
+}
+
+.first-screen__arrows {
+    display: flex;
+    color: white;
+    position: absolute;
+    bottom: 113px;
+    right: 0;
+    padding-right: 20px;
+}
+
+.first-screen__arrow-left {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 32px;
+}
+
+.first-screen__arrow-right {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.4);
+    font-size: 32px;
+}
+
+.first-screen__arrow-left:hover, .first-screen__arrow-right:hover {
+    @include styles-for-hover();
+}
+
+/****************************** OUR-SERVICES STYLES ***********************************/
+
+.our-services {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #EBEBEB;
+}
+
+.our-services__title {
+    font-family: LatoBlack;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: #BDBDBD;
+    margin: 140px 0 40px 0;
+}
+
+.our-services__subtitle {
+    font-family: MerriweatherUltra;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 69px;
+    color: #333333;
+    margin-bottom: 102px;
+}
+
+.our-services__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+    grid-gap: 30px;
+    margin-bottom: 140px;
+}
+
+.our-services__item {
+    height: 360px;
+    position: relative;
+    background: url(../img/our-services.png);
+    cursor: pointer;
+}
+
+.our-services__item:hover {
+    height: 360px;
+    position: relative;
+    background: linear-gradient(0deg, rgba(0, 95, 163, 0.65), rgba(0, 95, 163, 0.65)), url(../img/our-services.png);
+}
+
+.our-services__item-text {
+    position: absolute;
+    bottom: 45px;
+    left: 45px;
+    font-family: LatoBold;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+/****************************** ABOUT US STYLES ***********************************/
+
+.about-us {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-us__title {
+    margin: 140px 0 40px 0;
+    font-family: LatoBold;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: #BDBDBD;
+}
+
+.about-us__subtitle {
+    max-width: 347px;
+    margin-bottom: 60px;
+    font-family: MerriweatherUltra;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 69px;
+    color: #333333;
+}
+
+.about-us__text {
+    max-width: 445px;
+    font-family: LatoLight;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.about-us__items {
+    max-width: 540px;
+    min-width: 0;
+    margin-top: 164px;
+    margin-bottom: 140px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 255px);
+    grid-gap: 30px;
+}
+
+.about-us__item {
+    height: 255px;
+    position: relative;
+    background: #EBEBEB;
+}
+
+.about-us__item.active {
+    background: #005FA3;
+}
+
+.about-us__item.active>.about-us__item-title,
+.about-us__item.active>.about-us__item-text,
+.about-us__item.active>.about-us__item-link {
+    color: white;
+}
+
+.about-us__item:hover {
+    @include styles-for-hover(0.4);
+}
+
+.about-us__item.active:hover>.about-us__item-title, 
+.about-us__item.active:hover>.about-us__item-text, 
+.about-us__item.active:hover>.about-us__item-link {
+    color: black;
+}
+
+.about-us__item-title {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-family: LatoBlack;
+    font-style: normal;
+    font-size: 55px;
+    line-height: 66px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.about-us__item-text {
+    max-width: 107px;
+    position: absolute;
+    top: 114px;
+    left: 40px;
+    font-family: LatoBold;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.about-us__item-link {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    font-family: LatoBold;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #005FA3;
+}
+
+.about-us__subtitle--blue {
+    color: #005fa3;
+}
+
+/****************************** OUR CLIENTS STYLES ***********************************/
+
+.our-clients {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #EBEBEB;
+}
+
+.our-clients__title {
+    margin: 100px 0 40px 0;
+    font-family: LatoBlack;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: #BDBDBD;
+}
+
+.our-clients__subtitle {
+    margin-bottom: 80px;
+    font-family: MerriweatherUltra;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 69px;
+    color: #333333;
+}
+
+.our-clients__items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.our-clients__item {
+    width: 255px;
+    height: 130px;
+}
+
+.our-clients__circle {
+    display: flex;
+    max-width: 160px;
+    justify-content: space-between;
+    margin: 100px 0;
+}
+
+.our-clients__circle-item {
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 95, 163, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.our-clients__circle-item:hover, .our-clients__circle-item.active:hover {
+    background: rgba(103, 207, 255, 1);
+}
+
+.our-clients__circle-item.active {
+    background: rgba(0, 95, 163, 1);
+}
+
+.our-clients__arrows {
+    display: flex;
+    color: white;
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    padding-right: 20px;
+}
+
+.our-clients__arrow-left {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 95, 163, 0.2);
+    font-size: 32px;
+}
+
+.our-clients__arrow-right {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 95, 163, 1);
+    font-size: 32px;
+}
+
+.our-clients__arrow-left:hover, .our-clients__arrow-right:hover {
+    @include styles-for-hover();
+}
+
+/****************************** REVIEWS STYLES ***********************************/
+
+.reviews {
+    width: 100%;
+}
+
+.reviews__title {
+    margin: 140px 0 40px 0;
+    font-family: LatoBlack;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: #BDBDBD;
+}
+
+.reviews__subtitle {
+    margin-bottom: 80px;
+    font-family: MerriweatherUltra;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 69px;
+    color: #333333;
+}
+
+.reviews__item {
+    width: 100%;
+    background: #EBEBEB;
+}
+
+.reviews__item-text {
+    padding: 45px 95px 58px 95px;
+    font-family: LatoLight;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.reviews__item-person {
+    max-width: 435px;
+    display: flex;
+    align-items: center;
+    padding-left: 95px;
+    padding-bottom: 45px;
+}
+
+.reviews__item-person--info {
+    padding-left: 35px;
+}
+
+.reviews__item-person--name {
+    padding-bottom: 10px;
+    font-family: LatoBlack;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.reviews__item-person--job {
+    font-family: Lato;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #4F4F4F;
+}
+
+.reviews__circle {
+    display: flex;
+    max-width: 160px;
+    justify-content: space-between;
+    margin: 100px 0 140px 0;
+}
+
+.reviews__circle-item {
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 95, 163, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.reviews__circle-item:hover, .reviews__circle-item.active:hover {
+    background: rgba(103, 207, 255, 1);
+}
+
+.reviews__circle-item.active {
+    background: rgba(0, 95, 163, 1);
+}
+
+.reviews__arrows {
+    display: flex;
+    color: white;
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    padding-right: 20px;
+}
+
+.reviews__arrow-left {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 95, 163, 0.2);
+    font-size: 32px;
+}
+
+.reviews__arrow-right {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 95, 163, 1);
+    font-size: 32px;
+}
+
+.reviews__arrow-left:hover, .reviews__arrow-right:hover {
+    @include styles-for-hover();
+}
+
+/****************************** CONNECT STYLES ***********************************/
+
+.connect {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url(../img/Background.png);
+
+    &__info {
+        display: flex;
+        justify-content: space-between;       
+    }
+}
+
+.connect__info-text {
+
+    &--title {
+        margin: 122px 0 60px 0;
+        font-family: MerriweatherUltra;
+        font-style: normal;
+        font-size: 48px;
+        line-height: 69px;
+        color: #FFFFFF;
+    }
+
+    &--questions {
+        max-width: 445px;
+        margin-bottom: 80px;
+        font-family: LatoLight;
+        font-style: normal;
+        font-size: 18px;
+        line-height: 25px;
+        color: #FFFFFF;
+    }
+
+    &--items {
+        display: flex;
+        margin-bottom: 242px;
+    }
+
+    &--item {
+        display: flex;
+        margin-right: 40px;
+
+        &-link {
+            font-family: LatoLight;
+            font-style: normal;
+            font-size: 21px;
+            line-height: 29px;
+            color: #FFFFFF;
+            text-decoration: none;
+
+            &:hover {
+                color:  rgb(106, 183, 228);
+                text-decoration: underline;
+            }
+        }
+
+        &-logo {
+            margin-right: 18px;
+        }
+    }
+}
+
+
+.connect__info-form {
+    width: 100%;
+    max-width: 540px;
+    margin: 135px 0 140px 0;
+
+    &--fullname {
+        width: 100%;
+        display: flex;
+        margin-bottom: 35px;
+
+        label {
+            margin-bottom: 15px;
+            font-family: Lato;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 22px;
+            color: #FFFFFF;
+        }
+
+        input {
+            font-family: LatoLight;
+            font-style: normal;
+            font-size: 21px;
+            line-height: 29px;
+            color: #BDBDBD;
+            background: transparent;
+            border: transparent;
+            border-bottom: 1px solid white;
+        }
+    }
+
+    &--name, 
+    &--lastname {
+        width: 100%;
+        max-width: 255px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &--name {
+      margin-right: 30px;   
+    }
+
+    &--message {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-bottom: 15px;
+            font-family: Lato;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 22px;
+            color: #FFFFFF;
+        }
+
+        textarea {
+            height: 105px;
+            max-width: 540px;
+            font-family: LatoLight;
+            font-style: normal;
+            font-size: 21px;
+            line-height: 29px;
+            color: #BDBDBD;
+            background: transparent;
+            border: transparent;
+            border-bottom: 1px solid white;
+        }
+    }
+}
+
+.connect__submit-buttom {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+
+    input {
+        padding: 19px 18px;
+        font-family: Lato;
+        font-style: normal;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        background: #005FA3;
+        color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+
+        &:hover{
+            background: rgb(106, 183, 228);
+            color: black;
+        }
+    }
+}
+
+
+/* *****************************FOOTER STYLE*************************************** */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__item {
+    margin: 50px 0 40px 0;
+    font-family: LatoLight;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #000000;
+}
+
+
+/******************** MEDIA MAX WIDTH ************************/
+
+
+@media (max-width: 1120px) {
+    .connect__info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .connect__info-text--items {
+        margin-bottom: 0;
+    }  
+}
+
+@media (max-width: 760px) {
+    .reviews__item-person {
+        padding: 0 0 20px 0;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 360px) {
+
+}
